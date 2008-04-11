@@ -7,7 +7,9 @@ class Quizz(db.Model):
     short_name = db.StringProperty()
     full_name = db.StringProperty()
     description = db.TextProperty()
-    password_access = db.StringProperty()
+    public = db.BooleanProperty(default = True)
+    active = db.BooleanProperty(default = True)
+    password_participation = db.StringProperty()
     password_results = db.StringProperty()
     password_admin = db.StringProperty()
     created_at = db.DateTimeProperty(auto_now_add=True)
@@ -15,6 +17,7 @@ class Quizz(db.Model):
 
 class Question(db.Model):
     quizz = db.ReferenceProperty(reference_class=Quizz, collection_name="questions")
+    id = db.IntegerProperty()
     question = db.StringProperty()
     items = db.StringListProperty()
     answer = db.IntegerProperty()
@@ -25,7 +28,7 @@ class Question(db.Model):
 class User(db.Model):
     # key name = uuid - stored in a cookie (unique)
     uuid = db.StringProperty()
-    name = db.StringProperty(default = "-")
+    name = db.StringProperty()
     quizz = db.ReferenceProperty(reference_class=Quizz, collection_name="users")
     has_participation_access = db.BooleanProperty(default = False)
     has_results_access = db.BooleanProperty(default = False)

@@ -16,6 +16,8 @@ class QuizzHandler(RequestHandler):
 
     def desactivate_current_user(self, quizz_short_name):
         self.delete_cookie(quizz_short_name)
+        
+    # add get_current_user and get_current_quizz and get_current_question
 
 
 class New(QuizzHandler):
@@ -29,6 +31,9 @@ class Intro(QuizzHandler):
         template_data = {   'name': quizz_short_name,
                             'user_id': user_id }
         self.render_template('quizz/intro.html', template_data)
+    def post(self, quizz_short_name):
+        quizz = Quizz()
+        # load password from req
 
 class Question(QuizzHandler):
     def get(self, quizz_short_name, question):
