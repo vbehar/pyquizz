@@ -4,8 +4,8 @@ import wsgiref.handlers
 
 from google.appengine.ext import webapp
 
-from app.web import default_handler
-from app.web import quizz_handler
+from app.web.handlers import default_handler
+from app.web.handlers import quizz_handler
 
 def main():
     application = webapp.WSGIApplication([
