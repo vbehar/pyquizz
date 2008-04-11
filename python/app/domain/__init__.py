@@ -24,6 +24,7 @@ class Question(db.Model):
 
 class User(db.Model):
     # key name = uuid - stored in a cookie (unique)
+    uuid = db.StringProperty()
     name = db.StringProperty(default = "-")
     quizz = db.ReferenceProperty(reference_class=Quizz, collection_name="users")
     has_participation_access = db.BooleanProperty(default = False)
