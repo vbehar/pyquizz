@@ -11,10 +11,10 @@ class RequestHandler(webapp.RequestHandler):
         self.response.out.write(template.render(path, dictionary))
 
     def set_cookie(self, key, value):
-        self.response.headers['Set-Cookie'] = key + '=' + value + ';'
+        self.response.headers['Set-Cookie'] = key + '=' + value + '; path=/;'
 
     def delete_cookie(self, key):
-        self.response.headers['Set-Cookie'] = key + '=; Max-Age=0;'
+        self.response.headers['Set-Cookie'] = key + '=; path=/; Max-Age=0;'
 
     def get_cookies(self):
         self.request.charset = None

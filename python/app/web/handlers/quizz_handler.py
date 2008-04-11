@@ -33,11 +33,10 @@ class Intro(QuizzHandler):
 class Question(QuizzHandler):
     def get(self, quizz_short_name, question):
         quizz = Quizz()
-        user_id = self.get_current_user_uuid(quizz_short_name)
         self.desactivate_current_user(quizz_short_name)
         template_data = {   'quizz_name': quizz_short_name,
                             'question': question,
-                            'user_id': user_id }
+                            'user_id': '???' }
         self.render_template('quizz/question.html', template_data)
 
 class Answer(QuizzHandler):
