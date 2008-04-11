@@ -3,8 +3,9 @@
 from google.appengine.ext import db
 
 class Quizz(db.Model):
-    # key name = quizz name (unique)
-    name = db.StringProperty()
+    # key name = quizz short_name (unique)
+    short_name = db.StringProperty()
+    full_name = db.StringProperty()
     description = db.TextProperty()
     password_access = db.StringProperty()
     password_results = db.StringProperty()
@@ -21,24 +22,24 @@ class Question(db.Model):
     created_at = db.DateTimeProperty(auto_now_add=True)
     updated_at = db.DateTimeProperty(auto_now=True)
 
-class Participant(db.Model):
+class User(db.Model):
     # key name = uuid - stored in a cookie (unique)
-    name = db.StringProperty(default = "Anonyme")
-    created_at = db.DateTimeProperty(auto_now_add=True)
-    updated_at = db.DateTimeProperty(auto_now=True)
-
-class QuizzParticipation(db.Model):
-    participant = db.ReferenceProperty(reference_class=Participant, collection_name="participations")
-    quizz = db.ReferenceProperty(reference_class=Quizz, collection_name="participations")
+    name = db.StringProperty(default = "-")
+    quizz = db.ReferenceProperty(reference_class=Quizz, collection_name="users")
+    has_participation_access = db.BooleanProperty(default = False)
+    has_results_access = db.BooleanProperty(default = False)
+    has_admin_access = db.BooleanProperty(default = False)
     started_at = db.DateTimeProperty(auto_now_add=True)
     finished_at = db.DateTimeProperty(auto_now=True)
     duration = db.IntegerProperty(default = 0)
     right_answers = db.IntegerProperty(default = 0)
     finished = db.BooleanProperty(default = False)
+    created_at = db.DateTimeProperty(auto_now_add=True)
+    updated_at = db.DateTimeProperty(auto_now=True)
 
-class QuestionParticipation(db.Model):
-    question = db.ReferenceProperty(reference_class=Question, collection_name="participations")
-    quizz_participation = db.ReferenceProperty(reference_class=QuizzParticipation, collection_name="questions")
+class UserAnswer(db.Model):
+    question = db.ReferenceProperty(reference_class=Question, collection_name="users_answers")
+    user = db.ReferenceProperty(reference_class=User, collection_name="quizz_answers")
     answer = db.IntegerProperty()
     right_answer = db.BooleanProperty(default = False)
     answered_at = db.DateTimeProperty(auto_now_add=True)
