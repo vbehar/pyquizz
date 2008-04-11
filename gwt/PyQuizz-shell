@@ -1,3 +1,0 @@
-#!/bin/sh
-APPDIR=`dirname $0`;
-java  -cp "$APPDIR/src:$APPDIR/bin:/opt/google_webtoolkit_1.4.61/gwt-user.jar:/opt/google_webtoolkit_1.4.61/gwt-dev-linux.jar" com.google.gwt.dev.GWTShell -out "$APPDIR/www" "$@" com.googlecode.pyquizz.PyQuizz/PyQuizz.html;

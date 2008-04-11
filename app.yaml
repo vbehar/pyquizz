@@ -4,16 +4,8 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /
-  static_files: gwt/www/com.googlecode.pyquizz.PyQuizz/PyQuizz.html
-  upload: gwt/www/com.googlecode.pyquizz.PyQuizz/
-
-- url: /py/.*
+- url: /.*
   script: python/load_dispatcher.py
-
-- url: /(.*)
-  static_files: gwt/www/com.googlecode.pyquizz.PyQuizz/\1
-  upload: gwt/www/com.googlecode.pyquizz.PyQuizz/
 
 skip_files: |
  ^(.*/)?(
@@ -27,9 +19,4 @@ skip_files: |
  (.*/RCS/.*)|
  (\..*)|
  (README)|
- (gwt/bin)|
- (gwt/PyQuizz.*)|
- (gwt/src)|
- (gwt/test)|
- (gwt/tomcat)|
  )$

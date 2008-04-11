@@ -1,5 +1,0 @@
-# ignore generated dirs
-bin
-www
-tomcat
-.gwt-cache
