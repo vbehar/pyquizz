@@ -28,8 +28,10 @@ class Intro(QuizzHandler):
     def get(self, quizz_short_name):
         quizz = Quizz()
         user_id = self.get_current_user_uuid(quizz_short_name)
-        template_data = {   'name': quizz_short_name,
-                            'user_id': user_id }
+        template_data = { 
+            'name': quizz_short_name,
+            'user_id': user_id
+        }
         self.render_template('quizz/intro.html', template_data)
     def post(self, quizz_short_name):
         quizz = Quizz()
@@ -39,15 +41,19 @@ class Question(QuizzHandler):
     def get(self, quizz_short_name, question):
         quizz = Quizz()
         self.desactivate_current_user(quizz_short_name)
-        template_data = {   'quizz_name': quizz_short_name,
-                            'question': question,
-                            'user_id': '???' }
+        template_data = { 
+            'quizz_name': quizz_short_name,
+            'question': question,
+            'user_id': '???' 
+        }
         self.render_template('quizz/question.html', template_data)
 
 class Answer(QuizzHandler):
     def get(self, quizz_short_name, question, answer):
-        template_data = {   'quizz_name': quizz_short_name,
-                            'question': question,
-                            'answer': answer }
+        template_data = { 
+            'quizz_name': quizz_short_name,
+            'question': question,
+            'answer': answer 
+        }
         self.render_template('quizz/answer.html', template_data)
 
