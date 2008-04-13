@@ -10,8 +10,7 @@ home.list:
   - item deux
   - item trois
 
-home.longtext: Ceci est un texte long \r\n
-  avec des retours à la ligne \r\n 
-  en yaml et en html !
+home.longtext: Ceci est un texte long \n 
+  avec des retours à la ligne \n 
   http://www.google.fr
 

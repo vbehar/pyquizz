@@ -1,7 +1,11 @@
 {{ "home.title"|translate:lang }}<br />
 {{ "home.intro"|translate:lang }}<br />
 <ul><li>{{ "home.list"|translate:lang|join:"</li><li>" }}</li></ul><br />
-{{ "home.list"|translate:lang|slice:":2" }}
+<hr/>
+{% for item in "home.list"|translate:lang %}
+- {{ item }}<br/>
+{% endfor %}
+<hr/>
 {{ "home.longtext"|translate:lang|urlize|linebreaks }}
 
 
