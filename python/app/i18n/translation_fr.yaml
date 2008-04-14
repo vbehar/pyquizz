@@ -1,5 +1,7 @@
 # french translations
 
+app.name: pyQuizz
+
 home.title: Page d'accueil
 home.intro: Bonjour Monde... avec accénts et
   retour à la ligne uniquement dans le fichier yaml
@@ -10,7 +12,7 @@ home.list:
   - item deux
   - item trois
 
-home.longtext: Ceci est un texte long \n 
+home.longtext: "texte long \n 
   avec des retours à la ligne \n 
-  http://www.google.fr
+  http://www.google.fr" 
 

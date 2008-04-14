@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>{{ "app.name"|translate:lang }} {% block head_title %}{% endblock %}</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />	
+	<meta http-equiv="imagetoolbar" content="no" />
+	<link href="/css/keeping_it_clean.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="container">
+		<div id="header">
+			<h1 title="keeping it clean">{% block title %}{{ "app.name"|translate:lang }}{% endblock %}</h1>
+			<h2 title="keeping it clean">{% block sub_title %}{{ "app.name"|translate:lang }}{% endblock %}</h2>
+		</div>
+		<ul id="nav">
+				<li><a href="#" title="Home" class="on">Home</a></li>
+				<li><a href="#idea" title="The Idea">The Idea</a></li>
+				<li><a href="#code" title="The Code">The Code</a></li>
+				<li><a href="#examples" title="The Examples">The Examples</a></li>
+				<li><a href="#author" title="The Author">The Author</a></li>
+				<li><a href="#contact" title="Contact">Contact</a></li>
+		</ul>
+		<div id="content">
+		    {% block content %}{% endblock %}
+		
+			<h3 id="idea" title="The Idea">The Idea</h3>
+			<p>I was bored, had nothing to do, so thought <em>"why not create another template for oswd?"</em> and this is what happened.
+			If you aren't keen on the green, it is easy to change the <a href="http://www.growldesign.co.uk/oswd/KeepingItClean/pink.html">color</a>
+			using the <acronym title="Cascading Style Sheets">CSS</acronym>.
+			</p>
+			
+			<h3 id="code" title="The Code">The Code</h3>
+			<p>Keeping it Clean has been coded entirely in <acronym title="eXtensible HyperText Markup Language">XHTML</acronym> 1.1 
+			&amp; <acronym title="Cascading Style Sheets">CSS</acronym>. No tables were touched in the making of this website. Isn't that cool? 
+			As well as being cool, using <acronym title="eXtensible HyperText Markup Language">XHTML</acronym>
+			&amp; <acronym title="Cascading Style Sheets">CSS</acronym> has many advantages such as:</p>
+			<ul>
+				<li><b>Cleaner Code</b>: Adherence to strict guidelines results in cleaner code. All extraneous or ambiguous elements are eliminated, so pages 
+				are smaller, load faster, and render correctly.</li>
+				<li><b>Interoperability and Accessibility</b>: <acronym title="eXtensible HyperText Markup Language">XHTML</acronym> is currently readable by 
+				the greatest number of browsers, devices and assistive technologies like screen readers. Accessibility is quickly becoming a legal issue.</li>
+				<li><b>Search Engine Friendly Code</b>: <acronym title="eXtensible HyperText Markup Language">XHTML</acronym> produces pages that search 
+				engine spiders find easy to understand. There are no presentational elements or bloated code to confuse the spiders, so they'll crawl everything that 
+				matters and rank you accordingly.</li>
+				<li><b>Design Consistency</b>: With <acronym title="Cascading Style Sheets">CSS</acronym>, the same style elements can be applied to every 
+				page of a site. From the first page forward, your visitors will be presented with a consistent design scheme, building their comfort level and effectively 
+				promoting your brand.</li>
+				<li><b>Easy Maintenance</b>: Changes to <acronym title="Cascading Style Sheets">CSS</acronym> web page designs are simple. Instead of having 
+				to go back and alter every single page of your site, with <acronym title="Cascading Style Sheets">CSS</acronym> only the relevant style sheets have to be updated, saving you hours of work and limiting the 
+				introduction of possible errors. </li>
+			</ul>
+			
+			<h3 id="examples" title="The Examples">The Examples</h3>
+			<p>Here are some example elements that you may end up using on your website.</p>
+			<ul>
+					<li>An un-ordered list</li>	
+					<li>With several items</li>
+					<li>To give you an example</li>
+			</ul>
+			<blockquote><p>Some blockquote text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras semper neque ac tellus. 
+			Vestibulum ante ipsum primis in faucibus orci.</p></blockquote>
+						
+			<h3 id="author" title="The Author">The Author</h3>
+			<p>My name is Jenna Smith, and I am a 19 year old female from Cambridgeshire, 
+			<acronym title="United Kingdom">UK</acronym>. I work full time as a Web Designer for a very well known company and 
+			freelance out of work through my <a href="http://www.growldesign.co.uk">growldesign</a> website.</p>
+			<p>I made my first website when I was 11 years old and have been using <acronym title="eXtensible HyperText Markup Language">XHTML</acronym>
+			&amp; <acronym title="Cascading Style Sheets">CSS</acronym> for around 2 years. Other languages I know include 
+			<acronym title="Hypertext Pre-processor">PHP</acronym>, <acronym title="Open source Structured Query Language">MySQL</acronym>, 
+			<acronym title="eXtensible Markup Language">XML</acronym>	 and <acronym title="eXtensible StyleSheet Language Transformation">XSLT</acronym>. 
+			For a full list, take a look at my <a href="http://www.growldesign.co.uk">website</a>.</p>
+			
+			<h3 id="contact" title="Contact">Contact</h3>
+			<p>If you are a small business wanting an online presence, or a company looking to outsource, 
+			feel free to <a href="&#109;a&#105;l&#116;&#111;:&#106;&#101;&#110;&#110;&#97;&#64;&#103;&#114;&#111;&#119;&#108;
+			&#100;&#101;&#115;&#105;&#103;&#110;&#46;&#99;&#111;&#46;&#117;&#107;">contact me</a> for a quote.</p>
+													
+		</div>	
+		<div id="footer">
+			<a href="http://validator.w3.org/check/referer" title="Validates as XHTML 1.1">XHTML</a> | 
+			<a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css2" title="Validates as CSS">CSS</a> | 
+			<a href="&#109;a&#105;l&#116;&#111;:&#106;&#101;&#110;&#110;&#97;&#64;&#103;&#114;&#111;&#119;&#108;
+			&#100;&#101;&#115;&#105;&#103;&#110;&#46;&#99;&#111;&#46;&#117;&#107;" title="Contact growldesign">Contact</a>	<br/>		
+			Copyright &copy; 2005 Company. All Rights Reserved.<br />	
+			<!-- If you would like to use this template, I would appreciate it if you could keep the following line of code intact -->
+			Design by <a href="http://www.growldesign.co.uk">growldesign</a>
+		</div>
+	</div>
+</body>
+</html>

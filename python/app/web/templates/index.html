@@ -1,3 +1,10 @@
+{% extends "layouts/keeping_it_clean.html" %}
+
+{% block head_title %}{{ "home.title"|translate:lang }}{% endblock %}
+{% block title %}{{ "home.title"|translate:lang }}{% endblock %}
+{% block sub_title %}{{ "home.title"|translate:lang }}{% endblock %}
+
+{% block content %}
 {{ "home.title"|translate:lang }}<br />
 {{ "home.intro"|translate:lang }}<br />
 <ul><li>{{ "home.list"|translate:lang|join:"</li><li>" }}</li></ul><br />
@@ -7,5 +14,5 @@
 {% endfor %}
 <hr/>
 {{ "home.longtext"|translate:lang|urlize|linebreaks }}
-
+{% endblock %}
 
