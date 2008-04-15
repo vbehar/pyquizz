@@ -9,7 +9,7 @@ AVAILABLE_LANGS = [
     'en'
 ]
 
-DEFAULT_LANG = 'fr'
+DEFAULT_LANG = 'en'
 
 _translations = {}
 
@@ -28,3 +28,9 @@ def translate(key, lang = DEFAULT_LANG):
     if not _translations[lang].has_key(key):
         return key
     return _translations[lang][key]
+
+def choose_lang(available_langs):
+    for lang in available_langs:
+        if AVAILABLE_LANGS.count(lang) > 0:
+            return lang
+    return DEFAULT_LANG

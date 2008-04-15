@@ -10,6 +10,8 @@ from app.web.handlers import quizz_handler
 def main():
     application = webapp.WSGIApplication([
             ('/', default_handler.Home),
+            ('/404', default_handler.NotFound),
+            ('/403', default_handler.NotAuthorized),
             ('/new-quizz', quizz_handler.New),
             (r'/quizz/(.*)/(.*)/(.*)', quizz_handler.Answer),
             (r'/quizz/(.*)/(.*)', quizz_handler.Question),
