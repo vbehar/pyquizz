@@ -7,8 +7,7 @@ class Quizz(db.Model):
     short_name = db.StringProperty()
     full_name = db.StringProperty()
     description = db.TextProperty()
-    # add tagging/tags (new models Tagging and Tag)
-    # add quizz lang ?
+    lang = db.TextProperty()
     public = db.BooleanProperty(default = True)
     active = db.BooleanProperty(default = False)
     password_participation = db.StringProperty()
@@ -30,8 +29,8 @@ class Question(db.Model):
 class User(db.Model):
     # key name = uuid - stored in a cookie (unique)
     uuid = db.StringProperty()
-    name = db.StringProperty()
-    # add lang with default and forced values
+    name = db.StringProperty
+    lang = db.TextProperty()
     quizz = db.ReferenceProperty(reference_class=Quizz, collection_name="users")
     has_participation_access = db.BooleanProperty(default = False)
     has_results_access = db.BooleanProperty(default = False)
@@ -49,5 +48,17 @@ class UserAnswer(db.Model):
     user = db.ReferenceProperty(reference_class=User, collection_name="quizz_answers")
     answer = db.IntegerProperty()
     right_answer = db.BooleanProperty(default = False)
-    # add time_to_answer
+    time_to_answer = db.IntegerProperty(default = 0)
     answered_at = db.DateTimeProperty(auto_now_add=True)
+
+
+class Tag(db.Model):
+    # key name = tag name (unique)
+    name = db.StringProperty()
+    created_at = db.DateTimeProperty(auto_now_add=True)
+    updated_at = db.DateTimeProperty(auto_now=True)
+
+class Tagging(db.Model):
+    tag = db.ReferenceProperty(reference_class=Tag, collection_name="taggings")
+    quizz = db.ReferenceProperty(reference_class=Quizz, collection_name="taggings")
+    tagged_at = db.DateTimeProperty(auto_now_add=True)
